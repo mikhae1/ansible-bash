@@ -1,0 +1,22 @@
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+  . /etc/bashrc
+fi
+# Prompt
+source ~/.git-prompt.sh
+PS1='{{ prompt }}'
+# Make git completions work on "g":
+source /etc/bash_completion.d/git
+__git_complete g __git_main
+# Vars
+# Aliases
+alias p="ping"
+alias g="git"
+alias s="sudo"
+alias hg="history | grep"
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+# User specific functions
+#if [[ $- =~ "i" ]]; then
+#  cd ~
+#fi
