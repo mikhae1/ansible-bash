@@ -4,7 +4,7 @@ if [ -f /etc/bashrc ]; then
 fi
 # Prompt
 source ~/.git-prompt.sh
-PS1='{{ prompt }}'
+PS1='\[\e[0;{{ promptColor }}m\][\u@\h]\[\e[0;30m\]$(__git_ps1 "#%s")\[\e[0m\] \w \[\e[0;{{ promptColor }}m\]\$\[\e[0m\] '
 # Make git completions work on "g":
 source /etc/bash_completion.d/git
 __git_complete g __git_main
