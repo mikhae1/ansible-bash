@@ -1,31 +1,34 @@
 ---
-  - name: Copy .git-prompt.sh (git prompt in bash)
-    copy: src=~/.git-prompt.sh dest=~/.git-prompt.sh
+# install bash settings
 
-  - name: Backup default bash profile
-    command: cp -v ~/.bashrc ~/.bashrc.old
-    ignore_errors: yes
+- name: Copy .git-prompt.sh (git prompt in bash)
+  copy: src=~/.git-prompt.sh dest=~/.git-prompt.sh
 
-  - name: Copy default .bashrc profile
-    template: src=templates/.bashrc.j2 dest=~/.bashrc mode=0640
+- name: Backup default bash profile
+  command: cp -v ~/.bashrc ~/.bashrc.old
+  ignore_errors: yes
 
-  - name: Backup default .gitconfig
-    command: cp -v ~/.gitconfig ~/.gitconfig.old
-    ignore_errors: yes
+- name: Copy default .bashrc profile
+  template: src=templates/.bashrc.j2 dest=~/.bashrc mode=0640
 
-  - name: Copy .gitconfig
-    copy: src=~/.gitconfig dest=~/.gitconfig
+- name: Backup default .gitconfig
+  command: cp -v ~/.gitconfig ~/.gitconfig.old
+  ignore_errors: yes
 
-  - name: Backup default .vimrc
-    command: cp -v ~/.vimrc ~/.vimrc.old
-    ignore_errors: yes
+- name: Copy .gitconfig
+  copy: src=~/.gitconfig dest=~/.gitconfig
 
-  - name: Copy .vimrc
-    copy: src=~/.vimrc dest=~/.vimrc
+- name: Backup default .vimrc
+  command: cp -v ~/.vimrc ~/.vimrc.old
+  ignore_errors: yes
 
-  - name: Backup default .vim settings dir
-    command: cp -rv ~/.vim ~/.vim.old
-    ignore_errors: yes
+- name: Copy .vimrc
+  copy: src=~/.vimrc dest=~/.vimrc
 
-  - name: Copy .vim settings dir
-    copy: src=~/.vim dest=~
+- name: Backup default .vim settings dir
+  command: cp -rv ~/.vim ~/.vim.old
+  ignore_errors: yes
+
+- name: Copy .vim settings dir
+  copy: src=~/.vim dest=~
+

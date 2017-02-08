@@ -22,3 +22,15 @@
     promptColor: '34'
   tasks:
     - include: tasks/default.yml
+
+- hosts: demo
+  vars:
+    promptColor: '95'
+  tasks:
+    - include: tasks/default.yml
+
+- hosts: so-master
+  vars:
+    promptColor: '100'
+  tasks:
+    - include: tasks/default.yml
