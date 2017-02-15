@@ -1,0 +1,28 @@
+# Get non-interactive aliases and functions
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
+fi
+
+# Prompt
+source ~/.git-prompt.sh
+PS1='\[\e[0;{{ promptColor }}m\][\u@\h]\[\e[0;30m\]$(__git_ps1 "#%s")\[\e[0m\] \w \[\e[0;{{ promptColor }}m\]\$\[\e[0m\] '
+
+# Make git completions work on "g":
+source /etc/bash_completion.d/git
+__git_complete g __git_main
+
+# Vars
+
+# Aliases
+alias p="ping"
+alias g="git"
+alias s="sudo"
+alias hg="history | grep"
+
+# User specific functions
+# tmux support
+if [[ $- =~ "i" ]]; then
+  echo "export SSH_AUTH_SOCK=$SSH_AUTH_SOCK" > ~/.ssh/auth_sock
+  alias ssh="source ~/.ssh/auth_sock && echo -e \"\nnew ssh socket loaded: $SSH_AUTH_SOCK\"; ssh"
+fi
+

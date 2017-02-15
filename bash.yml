@@ -25,7 +25,7 @@
 
 - hosts: demo
   vars:
-    promptColor: '95'
+    promptColor: '35'
   tasks:
     - include: tasks/default.yml
 
