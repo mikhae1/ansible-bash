@@ -9,14 +9,14 @@
   ignore_errors: yes
 
 - name: Copy new .bash_profile
-  template: src=templates/.bash_profile.j2 dest=~/.bash_profile mode=0640
+  template: src=templates/bash_profile.j2 dest=~/.bash_profile mode=0640
 
 - name: Backup default .bashrc
   command: cp -v ~/.bashrc ~/.bashrc.old
   ignore_errors: yes
 
 - name: Copy new .bashrc
-  template: src=templates/.bashrc.j2 dest=~/.bashrc mode=0640
+  template: src=templates/bashrc.j2 dest=~/.bashrc mode=0640
 
 - name: Backup default .gitconfig
   command: cp -v ~/.gitconfig ~/.gitconfig.old
