@@ -34,3 +34,9 @@
     promptColor: '100'
   tasks:
     - include: tasks/default.yml
+
+- hosts: orchid-master
+  vars:
+    promptColor: '100'
+  tasks:
+    - include: tasks/default.yml
