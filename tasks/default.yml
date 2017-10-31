@@ -37,6 +37,6 @@
   ignore_errors: yes
 
 - name: Copy .vim settings dir
-  synchronize: 
-    src: ~/.vim 
+  synchronize:
+    src: ~/.vim
     dest: ~/
