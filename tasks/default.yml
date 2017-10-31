@@ -40,3 +40,8 @@
   synchronize:
     src: ~/.vim
     dest: ~/
+
+- name: create backup dir
+  file:
+    state: directory
+    path: ~/backup
